@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:diaryApp.Views"
+       Title="diaryApp"
+       x:Class="diaryApp.AppShell">
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+     <TabBar>
+        <!-- Title：表示されるテキスト -->
+        <!-- Icon：表示される画像を指定(Resources/drawable内の画像が呼ばれる) -->
+        <!-- ContentTemplate：呼び出すページを指定 -->
+        
+        <!-- MainPage -->
+        <ShellContent Title="MainPage"
+                      Icon="icon_feed.png" 
+                      ContentTemplate="{DataTemplate local:MainPage}" />
+
+
+        <!-- AboutPage -->
+        <ShellContent Title="AboutPage"
+                      Icon="icon_about.png" 
+                      ContentTemplate="{DataTemplate local:AboutPage}" />
+     </TabBar>
+
+</Shell>

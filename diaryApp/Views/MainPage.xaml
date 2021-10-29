@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="diaryApp.Views.MainPage"
+    Title="MainPage">
+
+    <StackLayout Margin="20,30">
+
+        <StackLayout Orientation="Horizontal">
+            <!--チェックした要素を削除するボタン-->
+            <Button x:Name="DeleteButton"
+                    Text="削除"
+                    Clicked="OnDeleteButtonClicked"
+                    IsVisible="false"
+                    BackgroundColor="#F5BD7E" Margin="5,0" Padding="20,1" TextColor="#000000"/>
+
+            <!-- 削除ボタンとチェックボックスの表示-->
+            <Button x:Name="EditButton"
+                    Clicked="OnEditButtonClicked"
+                    Text="編集"
+                    HorizontalOptions="EndAndExpand" BackgroundColor="#F5BD7E" Margin="5,0" Padding="20,1" TextColor="#000000"/>
+        </StackLayout> 
+
+
+
+
+        <!-- 日記の一覧を表示-->
+        <ListView x:Name="diaryList"
+                  ItemTapped="TappedDiaryListItem"
+                  HasUnevenRows="True">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Grid>
+                            <!--２行１列のグリッドの作成-->
+                            <Grid.ColumnDefinitions>
+                                <!--チェックボックスを表示する領域-->
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--グリッドの表示-->
+                            <!--削除用のチェックボックスの表示-->
+                            <CheckBox IsChecked="{Binding isChecked}"
+                                      IsVisible="{Binding editMode}"
+                                      Grid.Column="0"/>
+
+                            <!-- 日付とタイトルだけを表示-->
+                            <StackLayout Orientation="Vertical" Grid.Column="1">
+                                <Label Text="{Binding Date, StringFormat='{0:yyyy/MM/dd}'}"/>
+                                <Label Text="{Binding Title}"/>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+
+        <Button Text="新規作成" VerticalOptions="EndAndExpand" Clicked="OnNewDiaryButtonClicked" BackgroundColor="#A2F9F2" BorderColor="#000000" TextColor="#000000"/>
+    </StackLayout>
+</ContentPage>

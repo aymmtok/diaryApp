@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    x:Class="diaryApp.Views.createDiaryPage"
+    Title="日記の新規作成">
+    <StackLayout Padding="20,30,20,0">
+
+        <!-- 操作ボタン-->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Margin="0,30,0,30">
+            <!-- 戻るボタン-->
+            <Button Text="戻る"
+                    HorizontalOptions="StartAndExpand"
+                    Clicked="OnBackButtonClicked"
+                    BackgroundColor="#F5BD7E" Margin="5,0" Padding="20,1" TextColor="#000000"/>
+
+            <!-- 入力情報の保存ボタン-->
+            <Button Text="保存"
+                    HorizontalOptions="EndAndExpand"
+                    Clicked="OnSaveButtonClicked"
+                    BackgroundColor="#F5BD7E" Margin="5,0" Padding="20,1" TextColor="#000000"/>
+
+        </StackLayout>
+
+        <!-- 入力欄-->
+        
+        <StackLayout Orientation="Vertical"
+                     HorizontalOptions="Fill"
+                     Spacing="15">
+            <!--  日付選択　-->
+            <DatePicker x:Name="Date" Format="yyyy/MM/dd"
+                        Date="{x:Static sys:DateTime.Now}"/>
+
+            <!-- タイトル入力欄 -->
+            <Entry x:Name="Title" Placeholder="Enter Title"/>
+            <ScrollView>
+            <!-- 日記の詳細入力欄 -->
+            <Editor x:Name="Detail" Placeholder="Enter Details"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="StartAndExpand"
+                    HeightRequest="550"/>
+            </ScrollView>
+        </StackLayout>
+        
+
+    </StackLayout>
+</ContentPage>
