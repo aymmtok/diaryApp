@@ -18,7 +18,7 @@
 
         <Label Text="10秒後に自動でキャンセル" />
 
-    </StackLayout>-->
+         </StackLayout>-->
 
         <Button Text="TouchIDでログイン" HorizontalOptions="Center" VerticalOptions="Center" Clicked="OnAuthenticate" />
 
