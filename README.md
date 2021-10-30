@@ -6,7 +6,7 @@
 <li> 生体認証・パスコード認証
 <li> 起動画面のデザイン変更
 <li> アイコンの変更
-
+<br>
 <br>
 <参考サイト><br>
 <li>https://github.com/tugcearar/xamarinforms_biometricapp
