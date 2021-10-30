@@ -2,11 +2,14 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
     x:Class="diaryApp.TouchIDPage">
 
-    <StackLayout Orientation="Vertical" Padding="10">
+    <StackLayout Orientation="Vertical" Padding="20">
 
-        <Label x:Name="MainTitle" Text="Diary" FontSize="Large" TextColor="Red" HorizontalOptions="Center"/>
+        <Label x:Name="MainTitle" Text="Diary" FontFamily="Railway" FontSize="50" FontAttributes="Bold" TextColor="Red" HorizontalOptions="Center"/>
 
 
             <!--<StackLayout Orientation="Horizontal">
@@ -20,9 +23,15 @@
 
          </StackLayout>-->
 
-        <Button Text="TouchIDでログイン" HorizontalOptions="Center" VerticalOptions="Center" Clicked="OnAuthenticate" />
+        <!--<Button Text="TouchIDでログイン" HorizontalOptions="Center" VerticalOptions="Center" Clicked="OnAuthenticate" />
 
-        <Label x:Name="lblStatus" />
+        <Label x:Name="lblStatus" />-->
+
+        <ImageButton x:Name="btnThrone" Source="touchid.png"
+                     BackgroundColor="Transparent"
+                Clicked="Button_Clicked"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"></ImageButton>
 
     </StackLayout>
 </ContentPage>

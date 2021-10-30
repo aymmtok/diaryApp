@@ -16,9 +16,11 @@
     <None Remove="sqlite-net-pcl" />
     <None Remove="DB\" />
     <None Remove="Plugin.Fingerprint" />
+    <None Remove="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="DB\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 </Project>

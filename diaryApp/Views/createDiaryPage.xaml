@@ -38,7 +38,7 @@
             <!-- 日記の詳細入力欄 -->
             <Editor x:Name="Detail" Placeholder="Enter Details"
                     HorizontalOptions="Fill"
-                    VerticalOptions="StartAndExpand"
+                    VerticalOptions="FillAndExpand"
                     HeightRequest="550"/>
             </ScrollView>
         </StackLayout>
